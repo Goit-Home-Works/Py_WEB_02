@@ -34,7 +34,7 @@ RUN mkdir $APP_HOME/user_data
 WORKDIR $APP_HOME/user_data
 
 # Specify the command to run on container start
-CMD ["poetry", "run", "python3", "Py_WEB_01/__main__.py"]
+CMD ["poetry", "run", "python3", "__main__.py"]
 
 
 
