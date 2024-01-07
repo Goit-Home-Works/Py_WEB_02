@@ -5,11 +5,8 @@ FROM python:3.11-slim
 # Install build-essential for compilation
 RUN apt-get update && apt-get install -y build-essential && rm -rf /var/lib/apt/lists/*
 
-# Set the working directory in the container
-WORKDIR /app
-
 # Copy only the pyproject.toml file to the working directory
-COPY pyproject.toml /app/
+COPY pyproject.toml $APP_HOME/
 
 # Install Poetry
 RUN pip install poetry
@@ -21,17 +18,8 @@ RUN poetry lock
 RUN poetry install --no-interaction --no-ansi
 
 # Copy the entire project to the working directory
-COPY . /app
+COPY . .
 
-# Set permissions for the outputs directory
-RUN chmod -R 777 /app/Py_WEB_01/outputs
-
-
-# Створення директорії для даних користувача
-RUN mkdir $APP_HOME/user_data
-
-# Встановлення робочої директорії для даних користувача
-WORKDIR $APP_HOME/user_data
 
 # Specify the command to run on container start
 CMD ["poetry", "run", "python3", "__main__.py"]
