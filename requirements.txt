@@ -1,0 +1,10 @@
+Updating dependencies
+Resolving dependencies...
+
+Writing lock file
+markdown-it-py==3.0.0 ; python_version >= "3.11" and python_version < "4.0"
+mdurl==0.1.2 ; python_version >= "3.11" and python_version < "4.0"
+prompt-toolkit==3.0.43 ; python_version >= "3.11" and python_version < "4.0"
+pygments==2.17.2 ; python_version >= "3.11" and python_version < "4.0"
+rich==13.7.0 ; python_version >= "3.11" and python_version < "4.0"
+wcwidth==0.2.13 ; python_version >= "3.11" and python_version < "4.0"
